@@ -69,7 +69,7 @@ Dot_string     -> Atom ("." Atom):*
 
 # 1*atext
 
-Atom           -> [0-9A-Za-z!#$%&'*\-/=?^_`{|}~\x100-\xFFFF]:+
+Atom           -> [0-9A-Za-z!#$%&'*\-/=?^_`{|}~\u0080-\uD7FF\uE000-\uFFFD/]:+
 
 Quoted_string  -> DQUOTE QcontentSMTP:* DQUOTE
 
@@ -79,7 +79,7 @@ quoted_pairSMTP  -> "\\" [\x20-\x7e]
                     # i.e., backslash followed by any ASCII
                     # graphic (including itself) or SPace
 
-qtextSMTP      -> [\x20-\x21\x23-\x5b\x5d-\x7e\x100-\xFFFF] {% id %}
+qtextSMTP      -> [\x20-\x21\x23-\x5b\x5d-\x7e\u0080-\uD7FF\uE000-\uFFFD] {% id %}
                 # i.e., within a quoted string, any
                 # ASCII graphic or space is permitted
                 # without blackslash-quoting except
@@ -136,13 +136,13 @@ IPv6v4_comp    -> (IPv6_hex times_3[":" IPv6_hex]):? "::"
 
 DIGIT          -> [0-9] {% id %}
 
-ALPHA_DIGIT_U  -> [0-9A-Za-z\x100-\xFFFF] {% id %}
+ALPHA_DIGIT_U  -> [0-9A-Za-z\u0080-\uD7FF\uE000-\uFFFD] {% id %}
 
 ALPHA_DIGIT    -> [0-9A-Za-z] {% id %}
 
 ALPHA_DIG_DASH -> [-0-9A-Za-z] {% id %}
 
-ALPHA_DIG_DASH_U -> [-0-9A-Za-z\x100-\xFFFF] {% id %}
+ALPHA_DIG_DASH_U -> [-0-9A-Za-z\u0080-\uD7FF\uE000-\uFFFD] {% id %}
 
 HEXDIG         -> [0-9A-Fa-f] {% id %}
 
