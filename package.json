@@ -27,5 +27,12 @@
   "bugs": {
     "url": "https://github.com/gene-hightower/address-parse-21/issues"
   },
-  "homepage": "https://github.com/gene-hightower/address-parse-21#readme"
+  "homepage": "https://github.com/gene-hightower/address-parse-21#readme",
+  "dependencies": {
+    "nearley": "^2.20.1",
+    "punycode": "^2.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
 }
