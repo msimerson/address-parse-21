@@ -8,6 +8,6 @@ grammar.start = "main";
 
 const path_parser = new nearley.Parser(grammar);
 
-path_parser.feed('<"foo bar"@bar.com>');
+path_parser.feed('<"foo bar"@example.com>');
 
 console.log(JSON.stringify(path_parser.results));
