@@ -1,8 +1,14 @@
-%.js : %.ne
-	./node_modules/.bin/nearleyc $< -o $@
+PATH := $(PATH):./node_modules/.bin
 
-check:: grammar.js node_modules/.bin/mocha node_modules/.bin/nearleyc
-	./node_modules/.bin/mocha test/address.js
+%.js : %.ne | node_modules
+	nearleyc $< -o $@
 
-node_modules/.bin/mocha:
+check:: grammar.js | node_modules
+	mocha test/address.js
+
+clean::
+	rm -rf node_modules
+	rm grammar.js
+
+node_modules:
 	npm i
