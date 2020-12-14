@@ -1,0 +1,31 @@
+{
+  "name": "address-parse-21",
+  "version": "1.0.0",
+  "description": "RFC-5321 (Envelope) email address parser",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gene-hightower/address-parse-21.git"
+  },
+  "keywords": [
+    "email",
+    "envelope",
+    "address",
+    "RFC5321",
+    "RFC-5321",
+    "mail",
+    "from"
+  ],
+  "author": "Gene Hightower <gene@digilicious.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gene-hightower/address-parse-21/issues"
+  },
+  "homepage": "https://github.com/gene-hightower/address-parse-21#readme"
+}
