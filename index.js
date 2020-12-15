@@ -60,7 +60,7 @@ class Address {
         let domainpart = result.domain;
         this.original_host = domainpart;
 
-        if (/[\u0100-\uFFFF]/.test(domainpart)) {
+        if (/[\u0080-\uFFFF]/.test(domainpart)) {
             this.is_utf8 = true;
             domainpart = punycode.toASCII(domainpart);
         }
