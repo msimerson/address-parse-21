@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "grammar": "npx nearleyc <grammar.ne -o grammar.js",
+    "lint": "npx eslint index.js test/*.js",
     "test": "npx mocha"
   },
   "repository": {
@@ -31,6 +32,8 @@
     "punycode": "^2.1.1"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "eslint": "*",
+    "eslint-plugin-haraka": "*"
   }
 }
