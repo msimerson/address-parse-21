@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "grammar": "npx nearleyc <grammar.ne -o grammar.js",
+    "postinstall": "npx nearleyc <grammar.ne -o grammar.js",
     "lint": "npx eslint index.js test/*.js",
     "test": "npx mocha"
   },
