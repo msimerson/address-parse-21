@@ -132,7 +132,7 @@ describe("format()", function () {
         done();
     })
 
-    it("multiple escaped chars", function (done) {
+    it("spaces inside a quoted string", function (done) {
         const addr = new Address('<"pří lišžlu ťoučkýkůň"@přílišžluťoučkýkůň.cz>');
         assert.equal(addr.format(), '<"pří lišžlu ťoučkýkůň"@přílišžluťoučkýkůň.cz>');
         done();
