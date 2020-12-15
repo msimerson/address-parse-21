@@ -10,7 +10,7 @@ grammar.start = 'main';
 
 class Address {
     constructor (user, host) {
-        if (typeof user === "object" && user.original) {
+        if (typeof user === 'object' && user.original) {
             // Assume constructing from JSON parse
             for (const k in user) {
                 this[k] = user[k];
@@ -44,11 +44,12 @@ class Address {
         }
 
         // bare postmaster is permissible: RFC-5321 (4.1.1.3)
-        const addrlc = addr.toLowerCase();
-        if (addrlc === 'postmaster' || addrlc == '<postmaster>') {
-            this.user = 'postmaster';
-            this.host = '';
-            return;
+        switch (addr.toLowerCase()) {
+            case 'postmaster':
+            case '<postmaster>':
+                this.user = 'postmaster';
+                this.host = '';
+                return;
         }
 
         const parser = new nearley.Parser(grammar);
